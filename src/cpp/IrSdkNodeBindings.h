@@ -29,14 +29,10 @@ namespace NodeIrSdk {
   
   NAN_METHOD(sendCmd);
 
-  static void cleanUp(void* arg);
-
   // this defines public api of native addon
   NAN_MODULE_INIT(init)
   {
     irsdk.startup();
-
-    node::AtExit(cleanUp);
 
     NAN_EXPORT(target, start);
     NAN_EXPORT(target, shutdown);
