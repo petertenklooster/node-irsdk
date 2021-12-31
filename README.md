@@ -56,9 +56,7 @@ Initialize JsIrSdk, can be done once before using getInstance first time.
 
   
 ```js
-var irsdk = require('node-irsdk')
-// look for telemetry updates only once per 100 ms
-var iracing = irsdk.init({telemetryUpdateInterval: 100})
+var irsdk = require('node-irsdk')// look for telemetry updates only once per 100 msvar iracing = irsdk.init({telemetryUpdateInterval: 100})
 ```
 <a name="module_irsdk.getInstance"></a>
 
@@ -69,8 +67,7 @@ Get initialized instance of JsIrSdk
 **Returns**: [<code>iracing</code>](#iracing) - Running instance of JsIrSdk  
   
 ```js
-var irsdk = require('node-irsdk')
-var iracing = irsdk.getInstance()
+var irsdk = require('node-irsdk')var iracing = irsdk.getInstance()
 ```
 <a name="iracing"></a>
 
@@ -159,10 +156,7 @@ Change camera tool state
 
   
 ```js
-// hide UI and enable mouse aim
-var States = iracing.Consts.CameraState
-var state = States.CamToolActive | States.UIHidden | States.UseMouseAimMode
-iracing.camControls.setState(state)
+// hide UI and enable mouse aimvar States = iracing.Consts.CameraStatevar state = States.CamToolActive | States.UIHidden | States.UseMouseAimModeiracing.camControls.setState(state)
 ```
 <a name="iracing+camControls.switchToCar"></a>
 
@@ -179,26 +173,22 @@ Switch camera, focus on car
 
   
 ```js
-// show car #2
-iracing.camControls.switchToCar(2)
+// show car #2iracing.camControls.switchToCar(2)
       
 ```
   
 ```js
-// show car #02
-iracing.camControls.switchToCar('02')
+// show car #02iracing.camControls.switchToCar('02')
       
 ```
   
 ```js
-// show leader
-iracing.camControls.switchToCar('leader')
+// show leaderiracing.camControls.switchToCar('leader')
       
 ```
   
 ```js
-// show car #2 using cam group 3
-iracing.camControls.switchToCar(2, 3)
+// show car #2 using cam group 3iracing.camControls.switchToCar(2, 3)
 ```
 <a name="iracing+camControls.switchToPos"></a>
 
@@ -344,8 +334,7 @@ Search timestamp
 
   
 ```js
-// jump to 2nd minute of 3rd session
-iracing.playbackControls.searchTs(2, 2*60*1000)
+// jump to 2nd minute of 3rd sessioniracing.playbackControls.searchTs(2, 2*60*1000)
 ```
 <a name="iracing+playbackControls.searchFrame"></a>
 
@@ -465,11 +454,7 @@ Execute pit command
 
   
 ```js
-// full tank, no tires, no tear off
-iracing.execPitCmd('clear')
-iracing.execPitCmd('fuel', 999) // 999 liters
-iracing.execPitCmd('lf') // new left front
-iracing.execPitCmd('lr', 200) // new left rear, 200 kPa
+// full tank, no tires, no tear offiracing.execPitCmd('clear')iracing.execPitCmd('fuel', 999) // 999 litersiracing.execPitCmd('lf') // new left frontiracing.execPitCmd('lr', 200) // new left rear, 200 kPa
 ```
 <a name="iracing+execTelemetryCmd"></a>
 
@@ -494,9 +479,7 @@ iRacing, sim, is started
 **Kind**: event emitted by [<code>iracing</code>](#iracing)  
   
 ```js
-iracing.on('Connected', function (evt) {
-  console.log(evt)
-})
+iracing.on('Connected', function (evt) {  console.log(evt)})
 ```
 <a name="iracing+event_Disconnected"></a>
 
@@ -506,9 +489,7 @@ iRacing, sim, was closed
 **Kind**: event emitted by [<code>iracing</code>](#iracing)  
   
 ```js
-iracing.on('Disconnected', function (evt) {
-  console.log(evt)
-})
+iracing.on('Disconnected', function (evt) {  console.log(evt)})
 ```
 <a name="iracing+event_TelemetryDescription"></a>
 
@@ -518,9 +499,7 @@ Telemetry description, contains description of available telemetry values
 **Kind**: event emitted by [<code>iracing</code>](#iracing)  
   
 ```js
-iracing.on('TelemetryDescription', function (data) {
-  console.log(evt)
-})
+iracing.on('TelemetryDescription', function (data) {  console.log(evt)})
 ```
 <a name="iracing+event_Telemetry"></a>
 
@@ -530,9 +509,7 @@ Telemetry update
 **Kind**: event emitted by [<code>iracing</code>](#iracing)  
   
 ```js
-iracing.on('Telemetry', function (evt) {
-  console.log(evt)
-})
+iracing.on('Telemetry', function (evt) {  console.log(evt)})
 ```
 <a name="iracing+event_SessionInfo"></a>
 
@@ -542,9 +519,7 @@ SessionInfo update
 **Kind**: event emitted by [<code>iracing</code>](#iracing)  
   
 ```js
-iracing.on('SessionInfo', function (evt) {
-  console.log(evt)
-})
+iracing.on('SessionInfo', function (evt) {  console.log(evt)})
 ```
 <a name="iracing+event_update"></a>
 
@@ -554,9 +529,7 @@ any update event
 **Kind**: event emitted by [<code>iracing</code>](#iracing)  
   
 ```js
-iracing.on('update', function (evt) {
-  console.log(evt)
-})
+iracing.on('update', function (evt) {  console.log(evt)})
 ```
 <a name="iracing..sessionInfoParser"></a>
 
