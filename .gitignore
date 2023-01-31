@@ -13,5 +13,4 @@
 .vscode
 node_modules/
 build/
-prebuilds/
 npm-debug.log
