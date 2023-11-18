@@ -1032,11 +1032,6 @@ declare module "node-irsdk" {
    */
   export function getInstance(): iracing;
 
-  export function execPitCmd(
-    command: keyof typeof PitCommand,
-    arg?: number
-  ): void;
-
   export class iracing {
     /**
      * iRacing, sim, is started
@@ -1058,5 +1053,7 @@ declare module "node-irsdk" {
      * @param event Contains SessionsInfo
      */
     on(event: "SessionInfo", listener: (event: SessionInfoEvent) => void): this;
+
+    execPitCmd(command: keyof typeof PitCommand, arg?: number): void;
   }
 }
