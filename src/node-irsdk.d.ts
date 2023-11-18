@@ -1055,5 +1055,19 @@ declare module "node-irsdk" {
     on(event: "SessionInfo", listener: (event: SessionInfoEvent) => void): this;
 
     execPitCmd(command: keyof typeof PitCommand, arg?: number): void;
+
+    camControls: {
+      setState(state: CameraState): void;
+      switchToCar(
+        carNum: number | string | CameraFocusCommand,
+        camGroupNum?: number,
+        camNum?: number
+      ): void;
+      switchToPos(
+        carNum: number | CameraFocusCommand,
+        camGroupNum?: number,
+        camNum?: number
+      ): void;
+    };
   }
 }
