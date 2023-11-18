@@ -30,6 +30,10 @@ Local<Value> NodeIrSdk::convertTelemetryValueToObjectDouble(IRSDKWrapper::Teleme
     {
       return getStringValue(var.intValue[index], PIT_SV_STATUS);
     }
+    if (strcmp(var.header->unit, "irsdk_PaceMode") == 0)
+    {
+      return getStringValue(var.intValue[index], PACE_MODE);
+    }
     return Nan::New(static_cast<int32_t>(var.intValue[index]));
   case irsdk_bitField:
     return getMaskedValues(var.intValue[index], var.header->unit);
@@ -113,6 +117,10 @@ Local<Value> NodeIrSdk::getMaskedValues(const int &val, char *unit)
   if (strcmp(unit, "irsdk_CarLeftRight") == 0)
   {
     return getValueArr(val, CAR_BESIDE);
+  }
+  if (strcmp(unit, "irsdk_PaceFlags") == 0)
+  {
+    return getValueArr(val, PACE_FLAG_MASKS);
   }
   cerr << "Missing converter for bitField: " << unit << endl;
   return Nan::New(static_cast<int32_t>(val));

@@ -58,6 +58,11 @@ const std::vector<MaskName> FLAG_MASKS = {
     MaskName((int)irsdk_startSet, "StartSet"),
     MaskName((int)irsdk_startGo, "StartGo")};
 
+const std::vector<MaskName> PACE_FLAG_MASKS = {
+    MaskName((int)irsdk_PaceFlagsEndOfLine, "EndOfLine"),
+    MaskName((int)irsdk_PaceFlagsFreePass, "FreePass"),
+    MaskName((int)irsdk_PaceFlagsWavedAround, "WavedAround"),
+
 const std::vector<MaskName> PIT_SV_MASKS = {
     MaskName((int)irsdk_LFTireChange, "LFTireChange"),
     MaskName((int)irsdk_RFTireChange, "RFTireChange"),
@@ -80,6 +85,14 @@ const std::vector<MaskName> PIT_SV_STATUS = {
     MaskName((int)irsdk_PitSvCantFixThat, "PitSvCantFixThat"),
 };
 
+const std::vector<MaskName> PACE_MODE = {
+    MaskName((int)irsdk_PaceModeSingleFileStart, "PaceModeSingleFileStart"),
+    MaskName((int)irsdk_PaceModeDoubleFileStart, "PaceModeDoubleFileStart"),
+    MaskName((int)irsdk_PaceModeSingleFileRestart, "PaceModeSingleFileRestart"),
+    MaskName((int)irsdk_PaceModeDoubleFileRestart, "PaceModeDoubleFileRestart"),
+    MaskName((int)irsdk_PaceModeNotPacing, "PaceModeNotPacing"),
+};
+
 const std::vector<MaskName> CAMERA_STATE_MASKS = {
     MaskName((int)irsdk_IsSessionScreen, "IsSessionScreen"),
     MaskName((int)irsdk_IsScenicActive, "IsScenicActive"),
@@ -100,6 +113,7 @@ const std::vector<MaskName> ENGINE_WARNINGS_MASKS = {
     MaskName((int)irsdk_engineStalled, "EngineStalled"),
     MaskName((int)irsdk_pitSpeedLimiter, "PitSpeedLimiter"),
     MaskName((int)irsdk_revLimiterActive, "RevLimiterActive"),
+    MaskName((int)irsdk_oilTempWarning, "OilTempWarning"),
 };
 
 const std::vector<MaskName> SESSION_STATES = {

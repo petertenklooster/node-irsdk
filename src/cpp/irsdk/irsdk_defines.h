@@ -143,6 +143,7 @@ enum irsdk_EngineWarnings
 	irsdk_engineStalled			= 0x08,
 	irsdk_pitSpeedLimiter		= 0x10,
 	irsdk_revLimiterActive		= 0x20,
+	irsdk_oilTempWarning		= 0x40,
 };
 
 // global flags
@@ -291,6 +292,22 @@ enum irsdk_PitSvStatus
 	irsdk_PitSvCantFixThat,
 };
 
+enum irsdk_PaceMode
+{
+	irsdk_PaceModeSingleFileStart = 0,
+	irsdk_PaceModeDoubleFileStart,
+	irsdk_PaceModeSingleFileRestart,
+	irsdk_PaceModeDoubleFileRestart,
+	irsdk_PaceModeNotPacing,
+};
+
+enum irsdk_PaceFlags
+{
+	irsdk_PaceFlagsEndOfLine = 0x01,
+	irsdk_PaceFlagsFreePass = 0x02,
+	irsdk_PaceFlagsWavedAround = 0x04,
+};
+
 //----
 //
 
@@ -371,6 +388,7 @@ bool irsdk_isConnected();
 const irsdk_header *irsdk_getHeader();
 const char *irsdk_getData(int index);
 const char *irsdk_getSessionInfoStr();
+int irsdk_getSessionInfoStrUpdate(); // incrementing index that indicates new session info string
 
 const irsdk_varHeader *irsdk_getVarHeaderPtr();
 const irsdk_varHeader *irsdk_getVarHeaderEntry(int index);
@@ -397,6 +415,7 @@ enum irsdk_BroadcastMsg
 	irsdk_BroadcastTelemCommand,		  // irsdk_TelemCommandMode, unused, unused
 	irsdk_BroadcastFFBCommand,		      // irsdk_FFBCommandMode, value (float, high, low)
 	irsdk_BroadcastReplaySearchSessionTime, // sessionNum, sessionTimeMS (high, low)
+	irsdk_BroadcastVideoCapture,          // irsdk_VideoCaptureMode, unused, unused
 	irsdk_BroadcastLast                   // unused placeholder
 };
 
@@ -482,6 +501,16 @@ enum irsdk_csMode
 	irsdk_csFocusAtExiting  = -1,
 	// ctFocusAtDriver + car number...
 	irsdk_csFocusAtDriver   = 0
+};
+
+enum irsdk_VideoCaptureMode
+{
+	irsdk_VideoCapture_TriggerScreenShot = 0,	// save a screenshot to disk
+	irsdk_VideoCaptuer_StartVideoCapture,		// start capturing video
+	irsdk_VideoCaptuer_EndVideoCapture,			// stop capturing video
+	irsdk_VideoCaptuer_ToggleVideoCapture,		// toggle video capture on/off
+	irsdk_VideoCaptuer_ShowVideoTimer,			// show video timer in upper left corner of display
+	irsdk_VideoCaptuer_HideVideoTimer,			// hide video timer
 };
 
 //send a remote controll message to the sim
