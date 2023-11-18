@@ -61,7 +61,7 @@ const std::vector<MaskName> FLAG_MASKS = {
 const std::vector<MaskName> PACE_FLAG_MASKS = {
     MaskName((int)irsdk_PaceFlagsEndOfLine, "EndOfLine"),
     MaskName((int)irsdk_PaceFlagsFreePass, "FreePass"),
-    MaskName((int)irsdk_PaceFlagsWavedAround, "WavedAround"),
+    MaskName((int)irsdk_PaceFlagsWavedAround, "WavedAround")};
 
 const std::vector<MaskName> PIT_SV_MASKS = {
     MaskName((int)irsdk_LFTireChange, "LFTireChange"),
@@ -82,16 +82,14 @@ const std::vector<MaskName> PIT_SV_STATUS = {
     MaskName((int)irsdk_PitSvTooFarForward, "PitSvTooFarForward"),
     MaskName((int)irsdk_PitSvTooFarBack, "PitSvTooFarBack"),
     MaskName((int)irsdk_PitSvBadAngle, "PitSvBadAngle"),
-    MaskName((int)irsdk_PitSvCantFixThat, "PitSvCantFixThat"),
-};
+    MaskName((int)irsdk_PitSvCantFixThat, "PitSvCantFixThat")};
 
 const std::vector<MaskName> PACE_MODE = {
     MaskName((int)irsdk_PaceModeSingleFileStart, "PaceModeSingleFileStart"),
     MaskName((int)irsdk_PaceModeDoubleFileStart, "PaceModeDoubleFileStart"),
     MaskName((int)irsdk_PaceModeSingleFileRestart, "PaceModeSingleFileRestart"),
     MaskName((int)irsdk_PaceModeDoubleFileRestart, "PaceModeDoubleFileRestart"),
-    MaskName((int)irsdk_PaceModeNotPacing, "PaceModeNotPacing"),
-};
+    MaskName((int)irsdk_PaceModeNotPacing, "PaceModeNotPacing")};
 
 const std::vector<MaskName> CAMERA_STATE_MASKS = {
     MaskName((int)irsdk_IsSessionScreen, "IsSessionScreen"),
