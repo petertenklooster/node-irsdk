@@ -1069,5 +1069,20 @@ declare module "node-irsdk" {
         camNum?: number
       ): void;
     };
+
+    playbackControls: {
+      play(): void;
+      pause(): void;
+      fastForward(speed?: number): void;
+      rewind(speed?: number): void;
+      slowForward(divider?: number): void;
+      slowBackward(divider?: number): void;
+      search(searchMode: keyof typeof ReplaySearchCommand): void;
+      searchTs(sessionNum: number, sessionTimeMS: number): void;
+      searchFrame(
+        frameNum: number,
+        relativeTo: keyof typeof ReplayPositionCommand
+      ): void;
+    };
   }
 }
