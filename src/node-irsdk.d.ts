@@ -1064,7 +1064,7 @@ declare module "node-irsdk" {
         camNum?: number
       ): void;
       switchToPos(
-        carNum: number | CameraFocusCommand,
+        position: number | CameraFocusCommand,
         camGroupNum?: number,
         camNum?: number
       ): void;
